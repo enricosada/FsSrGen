@@ -20,3 +20,6 @@ install:
 
 script: 
   - dotnet restore
+  # build dotnet-fssrgen
+  - cd src/dotnet-fssrgen
+  - dotnet build
