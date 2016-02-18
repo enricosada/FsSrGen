@@ -27,7 +27,9 @@ install:
   - wget -O "./scripts/obtain/install.sh" "https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/install.sh"
   # install a specific dotnet/cli version in DOTNET_INSTALL_DIR directory
   - chmod +x ./scripts/obtain/install.sh
-  - ./scripts/obtain/install.sh --channel beta -version $USE_DOTNET_CLI_VERSION --destination "$(pwd)/.dotnet"
+  - ./scripts/obtain/install.sh --channel beta -version "$(USE_DOTNET_CLI_VERSION)" --destination "$(pwd)/.dotnet"
+  # add dotnet to PATH
+  - export PATH=$(pwd)/.dotnet/bin:$PATH
   # show current dotnet info
   - echo "Using dotnet '$(which dotnet)'"
   - dotnet --version
