@@ -28,6 +28,8 @@ install:
   # install a specific dotnet/cli version in DOTNET_INSTALL_DIR directory
   - chmod +x ./scripts/obtain/install.sh
   - ./scripts/obtain/install.sh --channel beta -version "$(USE_DOTNET_CLI_VERSION)" --destination "$(pwd)/.dotnet"
+  # fix permissions (ref https://github.com/dotnet/cli/issues/492)
+  - sudo chmod -R 755 "$(pwd)/.dotnet/share/dotnet"
   # add dotnet to PATH
   - export PATH=$(pwd)/.dotnet/bin:$PATH
   # show current dotnet info
