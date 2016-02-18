@@ -4,6 +4,19 @@ language: c
 sudo: required
 dist: trusty
 
+addons:
+  apt:
+    packages:
+    - libicu-dev
+    - libunwind8
+    - gettext
+    - libssl-dev
+    - libcurl3-gnutls
+    - zlib1g
+    - liblttng-ust-dev
+    - lldb-3.6-dev
+    - lldb-3.6
+
 env:
   matrix:
     - USE_DOTNET_CLI_VERSION: 1.0.0.001461
