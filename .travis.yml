@@ -21,6 +21,10 @@ env:
   matrix:
     - USE_DOTNET_CLI_VERSION: 1.0.0.001461
 
+os:
+  - linux
+  - osx
+
 install:
   # download install script from dotnet/cli repo
   - mkdir -p "scripts/obtain"
